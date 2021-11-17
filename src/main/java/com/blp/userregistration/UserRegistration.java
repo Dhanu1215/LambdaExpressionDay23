@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 /**
  * User registration program using lambda expression.
  */
+
 @FunctionalInterface
 interface PasswordRule4 {
     void validUser(String password);
