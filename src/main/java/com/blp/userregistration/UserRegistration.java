@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * User registration program using lambda expression.
  */
 @FunctionalInterface
-interface PasswordRule1 {
+interface PasswordRule3 {
     void validUser(String password);
 }
 
@@ -15,13 +15,13 @@ public class UserRegistration {
 
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
-        PasswordRule1 fn = (password)->{
-            boolean check = Pattern.matches("^([a-zA-Z0-9@#$*]{8})$",password);
+        PasswordRule3 fn = (password) -> {
+            boolean check = Pattern.matches("^([A-Z]{1,}[a-z0-9@#$*]{7})$", password);
             if (check == true) {
                 System.out.println("Password is Valid");
-            }else
+            } else
                 System.out.println("Enter valid password");
         };
-        fn.validUser("dhanu@12");
+        fn.validUser("Dhanu@12");
     }
 }
