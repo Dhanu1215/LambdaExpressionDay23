@@ -7,21 +7,21 @@ import java.util.regex.Pattern;
  * User registration program using lambda expression.
  */
 @FunctionalInterface
-interface MobileNumber {
-    void validUser(String mobileNumber);
+interface PasswordRule1 {
+    void validUser(String password);
 }
 
 public class UserRegistration {
 
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
-        MobileNumber fn = (mobileNumber)->{
-            boolean check = Pattern.matches("^([91]{2} [0-9]{10})$",mobileNumber);
+        PasswordRule1 fn = (password)->{
+            boolean check = Pattern.matches("^([a-zA-Z0-9@#$*]{8})$",password);
             if (check == true) {
-                System.out.println("Mobile number is Valid");
+                System.out.println("Password is Valid");
             }else
-                System.out.println("Enter valid mobile number");
+                System.out.println("Enter valid password");
         };
-        fn.validUser("91 8421731310");
+        fn.validUser("dhanu@12");
     }
 }
