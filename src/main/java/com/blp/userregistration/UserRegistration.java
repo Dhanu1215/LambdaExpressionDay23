@@ -16,7 +16,7 @@ public class UserRegistration {
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
         PasswordRule2 fn = (password) -> {
-            boolean check = Pattern.matches("^([A-Z]{1}[a-z0-9@#$*]{7})$", password);
+            boolean check = Pattern.matches("^([A-Z]+[a-z0-9@#$*]{6}[0-9]+)$", password);
             if (check == true) {
                 System.out.println("Password is Valid");
             } else
